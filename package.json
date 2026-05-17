@@ -1,1 +1,8 @@
-{"scripts":{"build":"echo static"},"devDependencies":{"@tailwindcss/cli":"^4.3.0","tailwindcss":"^3.4.17"}}
+{
+  "scripts": {
+    "build": "mkdir -p public && cp index.html output.css public/ && cp -f README.md public/README.md || true"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}
