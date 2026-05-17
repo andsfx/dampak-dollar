@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <link rel="icon" href="data:,">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warga Desa & Kurs Dolar - Analisis Dampak Faktual</title>
+  
+  <!-- Fonts: Source Serif 4 + Inter (editorial infographic) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./output.css">
+</head>
+<body class="font-sans antialiased selection:bg-accent-200 selection:text-accent-900">
+
+  <!-- Top Floating Nav -->
+  <nav class="sticky top-0 z-40 bg-warm-50/90 backdrop-blur-md border-b border-warm-200 px-4 sm:px-8 py-4">
+    <div class="max-w-6xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-lg bg-accent-600 flex items-center justify-center text-white font-bold text-lg shadow-sm">
+          $
+        </div>
+        <div>
+          <span class="font-black text-warm-900 text-base tracking-tight">Rakyat & Dolar</span>
+          <span class="hidden md:inline-block ml-2 text-[10px] font-bold px-2 py-0.5 rounded-full bg-accent-100 text-accent-700 border border-accent-200">Panduan Edukasi Ekonomi</span>
+        </div>
+      </div>
+      <div class="flex items-center space-x-6">
+        <a href="#transmisi" class="text-xs font-bold text-warm-800 hover:text-accent-600 transition-colors">Alur Sebab</a>
+        <a href="#jalur" class="text-xs font-bold text-warm-800 hover:text-accent-600 transition-colors">4 Jalur</a>
+        <a href="#sektor" class="text-xs font-bold text-warm-800 hover:text-accent-600 transition-colors">Sektor Riil</a>
+        <a href="#kalkulator" class="text-xs font-bold text-warm-800 hover:text-accent-600 transition-colors">Kalkulator</a>
+        <button onclick="openExportModal()" class="px-3 py-1.5 text-[10px] font-black bg-warm-900 text-white rounded-lg hover:bg-warm-800 transition-all flex items-center space-x-1 shadow-sm">
+          <span>Struktur Data</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Editorial Hero Section -->
+  <header class="relative overflow-hidden pt-16 pb-20 px-4 sm:px-8 border-b border-warm-200">
+    <div class="max-w-4xl mx-auto text-center space-y-6 relative z-10">
+      <div class="inline-flex items-center space-x-2 bg-accent-50 text-accent-700 px-3 py-1 rounded-full text-[11px] font-bold border border-accent-100">
+        <span>Visualisasi Interaktif Rantai Ekonomi Global</span>
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-serif font-black text-warm-900 leading-tight">
+        Warga Desa Tidak Pegang Dolar, <br>
+        <span class="italic text-accent-600">Tapi Tetap Kena Dampaknya</span>
+      </h1>
+      <p class="text-warm-800 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+        Petani tidak belanja pakai dolar. Nelayan tidak membeli solar pakai dolar. Ibu rumah tangga juga tidak membawa dolar ke warung. Tapi saat dolar naik, pupuk bisa ikut mahal, ongkos angkut naik, dan harga barang harian terasa lebih berat. Hubungannya tidak selalu terlihat, tapi dampaknya sampai ke dapur.
+      </p>
+
+      <!-- Jawaban Singkat Highlight -->
+      <div class="p-6 rounded-2xl bg-warm-100 border border-warm-200 max-w-xl mx-auto text-left shadow-sm">
+        <span class="text-[10px] font-black uppercase tracking-wider text-accent-700 block mb-1">TL;DR / JAWABAN SINGKAT</span>
+        <p class="text-warm-900 text-sm leading-relaxed">
+          Rakyat desa tetap sangat terpengaruh dolar walaupun tidak memakainya secara langsung. Transmisi dampaknya mengalir secara halus lewat kenaikan harga pupuk kimia, solar perahu, obat pertanian, dan sembako olahan impor.
+        </p>
+      </div>
+
+      <!-- Quick Visual Flow (Infographic Signature) -->
+      <div class="pt-8 max-w-3xl mx-auto">
+        <p class="text-xs font-bold text-warm-800 uppercase tracking-widest mb-4">Mekanisme Aliran Dampak</p>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
+          <div class="p-4 bg-white rounded-xl border border-warm-200 shadow-sm relative">
+            <span class="text-2xl block mb-1">📈</span>
+            <strong class="text-xs text-warm-900 block">Dolar AS Naik</strong>
+            <span class="text-[10px] text-slate-500">Rupiah melemah</span>
+            <div class="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-accent-600 font-bold">→</div>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-warm-200 shadow-sm relative">
+            <span class="text-2xl block mb-1">🚢</span>
+            <strong class="text-xs text-warm-900 block">Impor Lebih Mahal</strong>
+            <span class="text-[10px] text-slate-500">Bahan baku & energi</span>
+            <div class="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-accent-600 font-bold">→</div>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-warm-200 shadow-sm relative">
+            <span class="text-2xl block mb-1">🚜</span>
+            <strong class="text-xs text-warm-900 block">Biaya Produksi Naik</strong>
+            <span class="text-[10px] text-slate-500">Pupuk, Solar, Sembako</span>
+            <div class="hidden md:block absolute top-1/2 -right-3 -translate-y-1/2 text-accent-600 font-bold">→</div>
+          </div>
+          <div class="p-4 bg-white rounded-xl border border-warm-200 shadow-sm">
+            <span class="text-2xl block mb-1">💸</span>
+            <strong class="text-xs text-warm-900 block">Dapur Terhimpit</strong>
+            <span class="text-[10px] text-slate-500">Uang belanja susut</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mengapa Dolar Berpengaruh: 2 Visual Paths -->
+  <section id="transmisi" class="py-20 px-4 sm:px-8 bg-white border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Hubungan Sebab Akibat</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Mengapa Arah Dolar Menentukan Biaya Kita?</h3>
+        <p class="text-warm-800 text-sm">Fluktuasi nilai tukar Rupiah terhadap Dolar memiliki dua arah dampak yang bertolak belakang.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        
+        <!-- Path 1: Rupiah Melemah -->
+        <div class="p-8 rounded-3xl border border-warm-200 bg-warm-50/50 space-y-6">
+          <div class="flex items-center space-x-3">
+            <span class="text-3xl">🔴</span>
+            <div>
+              <h4 class="font-serif font-bold text-warm-900 text-xl">Skenario A: Rupiah Melemah (Dolar Naik)</h4>
+              <p class="text-[10px] text-red-600 font-bold uppercase">Tekanan Biaya Meningkat</p>
+            </div>
+          </div>
+          <p class="text-warm-800 text-sm leading-relaxed">
+            Ketika nilai Rupiah menyusut terhadap Dolar, barang-barang yang didatangkan dari luar negeri harganya melonjak drastis saat dikonversi ke Rupiah. Beban ekstra ini langsung dialirkan ke pembeli di pasar desa.
+          </p>
+          <div class="space-y-3 border-t border-warm-200 pt-4">
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-red-500 font-bold">1.</span>
+              <p class="text-warm-800"><strong>Barang Impor Jadi Lebih Mahal:</strong> Bahan kimia pupuk, gandum, kedelai, dan komponen elektronik melonjak.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-red-500 font-bold">2.</span>
+              <p class="text-warm-800"><strong>Biaya Produksi Naik:</strong> Sawah dan perahu nelayan membutuhkan modal operasional ekstra.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-red-500 font-bold">3.</span>
+              <p class="text-warm-800"><strong>Harga Distribusi Terdorong:</strong> Kenaikan harga minyak mentah global berbasis dolar mendongkrak ongkos angkut.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-red-500 font-bold">4.</span>
+              <p class="text-warm-800"><strong>Inflasi Meningkat:</strong> Harga eceran di warung kelontong disesuaikan ke atas, menekan daya beli warga.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Path 2: Rupiah Menguat -->
+        <div class="p-8 rounded-3xl border border-warm-200 bg-warm-50/50 space-y-6">
+          <div class="flex items-center space-x-3">
+            <span class="text-3xl">🟢</span>
+            <div>
+              <h4 class="font-serif font-bold text-warm-900 text-xl">Skenario B: Rupiah Menguat (Dolar Turun)</h4>
+              <p class="text-[10px] text-emerald-600 font-bold uppercase">Relaksasi Tekanan Harga</p>
+            </div>
+          </div>
+          <p class="text-warm-800 text-sm leading-relaxed">
+            Saat Rupiah bangkit dan menguat, biaya impor komponen dan energi melonggar. Ini menekan modal produksi dalam negeri dan menjaga harga harian tetap stabil di pasaran.
+          </p>
+          <div class="space-y-3 border-t border-warm-200 pt-4">
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-emerald-500 font-bold">1.</span>
+              <p class="text-warm-800"><strong>Barang Impor Lebih Murah:</strong> Belanja tepung terigu, bahan obat, dan kedelai menjadi lebih ringan.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-emerald-500 font-bold">2.</span>
+              <p class="text-warm-800"><strong>Tekanan Harga Berkurang:</strong> Beban selisih kurs yang sebelumnya tinggi perlahan menghilang.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-emerald-500 font-bold">3.</span>
+              <p class="text-warm-800"><strong>Biaya Bahan Baku Turun:</strong> Menghemat modal petani, nelayan, dan industri kecil perakitan.</p>
+            </div>
+            <div class="flex items-start space-x-2 text-xs">
+              <span class="text-emerald-500 font-bold">4.</span>
+              <p class="text-warm-800"><strong>Daya Beli Membaik:</strong> Stabilnya harga barang membuat rumah tangga bisa menyisihkan tabungan.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Jalur Dampak ke Desa (Timeline Node Style) -->
+  <section id="jalur" class="py-20 px-4 sm:px-8 bg-warm-100/50 border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Jaringan Distribusi</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">4 Pintu Transmisi Utama Dolar ke Sawah & Pesisir</h3>
+        <p class="text-warm-800 text-sm">Bagaimana gejolak kurs global merayap masuk ke sektor operasional harian pedesaan.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Node 1 -->
+        <div class="bg-white p-6 rounded-2xl border border-warm-200 flex flex-col justify-between hover:shadow-sm transition-all">
+          <div class="space-y-4">
+            <span class="text-3xl block">⛽</span>
+            <h4 class="font-bold text-warm-900 text-lg">1. Harga BBM & Energi</h4>
+            <p class="text-warm-800 text-xs leading-relaxed">
+              Minyak mentah dihitung dalam USD. Saat rupiah melemah, subsidi APBN membengkak, memicu risiko kenaikan Solar & Pertalite. Hal ini langsung mendongkrak ongkos angkut barang logistik ke warung desa.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-warm-100 text-[10px] text-slate-400 font-bold">
+            Rantai: Minyak Global → APBN → Tarif Solar
+          </div>
+        </div>
+
+        <!-- Node 2 -->
+        <div class="bg-white p-6 rounded-2xl border border-warm-200 flex flex-col justify-between hover:shadow-sm transition-all">
+          <div class="space-y-4">
+            <span class="text-3xl block">🌱</span>
+            <h4 class="font-bold text-warm-900 text-lg">2. Pupuk & Obat Tani</h4>
+            <p class="text-warm-800 text-xs leading-relaxed">
+              Bahan baku pupuk non-subsidi dan pestisida pelindung hama mayoritas mengandung zat aktif impor. Kenaikan Dolar menyeret harga jual pengecer lokal naik, melipatgandakan modal tanam petani.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-warm-100 text-[10px] text-slate-400 font-bold">
+            Rantai: Bahan Impor → Pabrik Kimia → Kios Desa
+          </div>
+        </div>
+
+        <!-- Node 3 -->
+        <div class="bg-white p-6 rounded-2xl border border-warm-200 flex flex-col justify-between hover:shadow-sm transition-all">
+          <div class="space-y-4">
+            <span class="text-3xl block">🛒</span>
+            <h4 class="font-bold text-warm-900 text-lg">3. Sembako & Harian</h4>
+            <p class="text-warm-800 text-xs leading-relaxed">
+              Kedelai (tahu/tempe), gandum (mie instan/terigu), dan gula pasir sebagian besar dipenuhi melalui impor. Saat Rupiah melemah, harga bahan pangan olahan di warung kelontong terpaksa naik.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-warm-100 text-[10px] text-slate-400 font-bold">
+            Rantai: Kurs → Gudang Importir → Warung Desa
+          </div>
+        </div>
+
+        <!-- Node 4 -->
+        <div class="bg-white p-6 rounded-2xl border border-warm-200 flex flex-col justify-between hover:shadow-sm transition-all">
+          <div class="space-y-4">
+            <span class="text-3xl block">🔌</span>
+            <h4 class="font-bold text-warm-900 text-lg">4. Suku Cadang & Alat</h4>
+            <p class="text-warm-800 text-xs leading-relaxed">
+              Pompa air sawah, suku cadang motor, traktor, hingga HP android rakitan menggunakan komponen impor sensitif kurs. Kenaikan Dolar dengan cepat memicu kenaikan harga jual barang tersebut.
+            </p>
+          </div>
+          <div class="mt-4 pt-4 border-t border-warm-100 text-[10px] text-slate-400 font-bold">
+            Rantai: Komponen Impor → Perakitan → Diler
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sektor Sektor Sawah & Pesisir (Visual Meter & Impact Details) -->
+  <section id="sektor" class="py-20 px-4 sm:px-8 bg-white border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Analisis Mendalam</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Kondisi di Tiga Pilar Ekonomi Pedesaan</h3>
+        <p class="text-warm-800 text-sm">Tiga kelompok utama ini merasakan hantaman kurs dengan cara yang berbeda.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- Sektor 1: Petani -->
+        <div class="bg-warm-50 rounded-3xl p-6 sm:p-8 border border-warm-200 flex flex-col justify-between shadow-sm">
+          <div class="space-y-6">
+            <div class="flex items-center space-x-3">
+              <span class="text-3xl">🚜</span>
+              <div>
+                <h4 class="font-bold text-warm-900 text-lg">Dampak bagi Petani</h4>
+                <p class="text-[10px] text-slate-400 font-bold uppercase">Sawah & Perkebunan</p>
+              </div>
+            </div>
+
+            <!-- Vulnerability Meter -->
+            <div class="p-3 bg-white rounded-xl border border-warm-200">
+              <div class="flex justify-between items-center text-xs mb-1">
+                <span class="text-warm-800 font-bold">Kerentanan:</span>
+                <span class="font-extrabold text-amber-600 bg-amber-50 px-2 py-0.5 rounded border border-amber-200">Menengah-Tinggi</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden mt-2">
+                <div class="bg-amber-500 h-1.5 rounded-full" style="width: 75%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-xs text-warm-900 leading-relaxed">
+              <p><strong>Biaya Produksi:</strong> Sawah sangat bergantung pada pupuk urea/NPK kimia non-subsidi, pestisida impor, dan solar traktor. Kenaikan Dolar langsung memotong marjin keuntungan.</p>
+              <p><strong>Harga Jual:</strong> Petani pangan lokal tertekan daya beli desa. Sebaliknya, <strong>Petani Komoditas Ekspor</strong> (kopi, cengkeh, kakao) justru diuntungkan karena harga dunia melonjak saat dirupiahkan.</p>
+              <p><strong>Risiko Ketimpangan:</strong> Petani kebun ekspor menikmati surplus melimpah, sedangkan buruh tani harian paling rentan terjepit kenaikan biaya makan harian.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-warm-200/50 text-[10px] text-slate-400 font-bold">
+            CATATAN: Tergantung Jenis Tanaman & Akses Pasar
+          </div>
+        </div>
+
+        <!-- Sektor 2: Nelayan -->
+        <div class="bg-warm-50 rounded-3xl p-6 sm:p-8 border border-warm-200 flex flex-col justify-between shadow-sm">
+          <div class="space-y-6">
+            <div class="flex items-center space-x-3">
+              <span class="text-3xl">⛵</span>
+              <div>
+                <h4 class="font-bold text-warm-900 text-lg">Dampak bagi Nelayan</h4>
+                <p class="text-[10px] text-slate-400 font-bold uppercase">Pesisir & Tangkapan Laut</p>
+              </div>
+            </div>
+
+            <!-- Vulnerability Meter -->
+            <div class="p-3 bg-white rounded-xl border border-warm-200">
+              <div class="flex justify-between items-center text-xs mb-1">
+                <span class="text-warm-800 font-bold">Kerentanan:</span>
+                <span class="font-extrabold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">Sangat Tinggi</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden mt-2">
+                <div class="bg-red-500 h-1.5 rounded-full" style="width: 90%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-xs text-warm-900 leading-relaxed">
+              <p><strong>Biaya Melaut:</strong> Bahan bakar solar menyedot 70% dari seluruh biaya operasional perahu nelayan motor tempel. Harga solar dunia naik langsung membatasi frekuensi melaut.</p>
+              <p><strong>Harga Tangkapan:</strong> Hasil laut premium berorientasi ekspor (lobster, kerapu) naik nilainya. Namun nelayan kecil kesulitan bersaing akibat rumitnya rantai pasok lokal.</p>
+              <p><strong>Tengkulak Pesisir:</strong> Keterikatan utang modal ke tengkulak membuat nelayan tradisional sulit menikmati selisih harga ekspor secara penuh.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-warm-200/50 text-[10px] text-slate-400 font-bold">
+            TITIK KRITIS: Biaya Solar & Rantai Dingin Komunal
+          </div>
+        </div>
+
+        <!-- Sektor 3: Buruh Tani -->
+        <div class="bg-warm-50 rounded-3xl p-6 sm:p-8 border border-warm-200 flex flex-col justify-between shadow-sm">
+          <div class="space-y-6">
+            <div class="flex items-center space-x-3">
+              <span class="text-3xl">👷</span>
+              <div>
+                <h4 class="font-bold text-warm-900 text-lg">Buruh & Keluarga Desa</h4>
+                <span class="text-[10px] text-slate-400 font-bold uppercase">Upah Harian & Sembako</span>
+              </div>
+            </div>
+
+            <!-- Vulnerability Meter -->
+            <div class="p-3 bg-white rounded-xl border border-warm-200">
+              <div class="flex justify-between items-center text-xs mb-1">
+                <span class="text-warm-800 font-bold">Kerentanan:</span>
+                <span class="font-extrabold text-red-600 bg-red-50 px-2 py-0.5 rounded border border-red-200">Ekstrim</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-1.5 overflow-hidden mt-2">
+                <div class="bg-red-600 h-1.5 rounded-full" style="width: 95%"></div>
+              </div>
+            </div>
+
+            <div class="space-y-4 text-xs text-warm-900 leading-relaxed">
+              <p><strong>Daya Beli Terjepit:</strong> Upah harian buruh lepas naik sangat lambat dan jarang disesuaikan kurs. Sementara belanja beras, terigu, minyak, dan tempe merangkak naik cepat.</p>
+              <p><strong>Pendidikan & Kesehatan:</strong> Anggaran pendidikan tersedot biaya transport harian anak. Obat apotek impor tertentu yang makin mahal menambah beban anggaran rumah tangga.</p>
+              <p><strong>Tabungan Kosong:</strong> Pendapatan harian habis hanya untuk mencukupi kebutuhan makan pokok, memotong kemampuan jaminan masa depan.</p>
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-warm-200/50 text-[10px] text-slate-400 font-bold">
+            SASARAN MITIGASI: Pangan Pekarangan & Bantuan Sosial
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Profiler: Cek Kondisi & Solusi Proteksi -->
+  <section class="py-20 px-4 sm:px-8 bg-warm-100/30 border-b border-warm-200">
+    <div class="max-w-4xl mx-auto space-y-8">
+      <div class="text-center space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Profiler Personal</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Pilih Profil, Lihat Dampak yang Paling Dekat</h3>
+        <p class="text-warm-800 text-sm">Pilih profil yang paling mirip dengan kondisi Anda. Lihat dampak utama dan langkah yang bisa dilakukan.</p>
+      </div>
+
+      <!-- Selector Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <button onclick="selectPersona('buruh')" id="btn-p-buruh" class="px-5 py-2.5 rounded-xl border border-warm-200 bg-white hover:bg-warm-50 text-xs font-bold text-warm-800 transition-all shadow-sm">
+          👷 Buruh Tani / Harian
+        </button>
+        <button onclick="selectPersona('petani-ekspor')" id="btn-p-petani-ekspor" class="px-5 py-2.5 rounded-xl border border-warm-200 bg-white hover:bg-warm-50 text-xs font-bold text-warm-800 transition-all shadow-sm">
+          ☕ Petani Komoditas Ekspor
+        </button>
+        <button onclick="selectPersona('nelayan')" id="btn-p-nelayan" class="px-5 py-2.5 rounded-xl border border-warm-200 bg-white hover:bg-warm-50 text-xs font-bold text-warm-800 transition-all shadow-sm">
+          ⛵ Nelayan Tradisional
+        </button>
+        <button onclick="selectPersona('pemilik-warung')" id="btn-p-pemilik-warung" class="px-5 py-2.5 rounded-xl border border-warm-200 bg-white hover:bg-warm-50 text-xs font-bold text-warm-800 transition-all shadow-sm">
+          🏪 Pemilik Warung Kelontong
+        </button>
+      </div>
+
+      <!-- Persona Result Card -->
+      <div class="bg-white border border-warm-200 rounded-3xl shadow-sm p-6 sm:p-8 space-y-6">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center pb-4 border-b border-warm-200 gap-4">
+          <div>
+            <h4 id="persona-title" class="font-serif font-black text-warm-900 text-2xl">👷 Buruh Tani / Harian Lepas</h4>
+            <p id="persona-subtitle" class="text-xs text-slate-400 mt-1">Profil Default</p>
+          </div>
+          <span id="persona-badge" class="px-3 py-1 rounded-full text-xs font-bold border bg-red-50 text-red-700 border-red-200">Paling Terhantam (⚠️)</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Bagaimana Dolar Mempengaruhi Anda?</h5>
+            <p id="persona-impact" class="text-warm-800 text-sm leading-relaxed">Kelompok paling terancam saat rupiah melemah. Upah harian Anda dinilai tetap, padahal harga beras, minyak goreng, tahu-tempe (kedelai impor), dan obat-obatan melesat naik di warung kelontong desa. Daya beli rumah tangga terjepit parah.</p>
+          </div>
+          <div class="space-y-4">
+            <h5 class="text-xs font-bold text-slate-400 uppercase tracking-wider">Strategi Bertahan & Solusi Mandiri</h5>
+            <p id="persona-strategy" class="text-warm-800 text-sm leading-relaxed">Disarankan mengurangi konsumsi makanan kemasan / mie instan yang berbahan dasar gandum impor. Maksimalkan menanam sayur lokal di pekarangan rumah untuk mengamankan ketahanan pangan mandiri tanpa bergantung penuh ke pasar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Real-time Rate + Interactive Sensitivity Calculator -->
+  <section id="kalkulator" class="py-20 px-4 sm:px-8 bg-white border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Simulasi Finansial</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Kalkulator Dampak Mandiri & Kurs Live</h3>
+        <p class="text-warm-800 text-sm leading-relaxed">Masukkan perkiraan anggaran belanja bulanan Anda. Geser persentase kenaikan Dolar untuk mengestimasi dampak skenario kenaikan biaya hidup di tingkat desa.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        
+        <!-- Live Rate Status Card -->
+        <div class="bg-warm-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-xl">
+          <div class="space-y-4">
+            <span class="text-[10px] font-bold uppercase tracking-widest text-accent-200">KURS USD/IDR LIVE</span>
+            <div class="flex items-baseline space-x-2">
+              <h4 id="live-rate" class="text-4xl font-serif font-black">Memuat...</h4>
+              <span id="rate-status" class="text-[9px] font-bold px-2 py-0.5 rounded bg-white/20 text-white">API</span>
+            </div>
+            <p class="text-xs text-warm-200/80 leading-relaxed">Data ditarik secara real-time dari API publik. Jika koneksi gagal, sistem memakai fallback assumed rate Rp16.000 untuk keamanan kalkulasi.</p>
+          </div>
+          <div class="mt-8 border-t border-white/10 pt-4 text-[10px] text-warm-300">
+            <span>Terakhir Diperbarui: </span>
+            <strong id="rate-time" class="text-white block mt-1">-</strong>
+          </div>
+        </div>
+
+        <!-- Calculator Form & Slider Outputs -->
+        <div class="lg:col-span-2 bg-warm-50 border border-warm-200 rounded-3xl p-6 sm:p-8 space-y-6 shadow-sm">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <label class="block">
+              <span class="text-xs font-bold text-warm-800">Pupuk & Obat Pertanian / Bulan</span>
+              <input id="calc-pupuk" type="number" value="500000" class="mt-1 w-full px-4 py-3 rounded-xl border border-warm-200 bg-white focus:ring-2 focus:ring-accent-500 outline-none font-bold text-warm-900 text-sm">
+            </label>
+            <label class="block">
+              <span class="text-xs font-bold text-warm-800">BBM Nelayan / Solar Traktor / Bulan</span>
+              <input id="calc-bbm" type="number" value="300000" class="mt-1 w-full px-4 py-3 rounded-xl border border-warm-200 bg-white focus:ring-2 focus:ring-accent-500 outline-none font-bold text-warm-900 text-sm">
+            </label>
+            <label class="block">
+              <span class="text-xs font-bold text-warm-800">Sembako Olahan & Gandum / Bulan</span>
+              <input id="calc-sembako" type="number" value="800000" class="mt-1 w-full px-4 py-3 rounded-xl border border-warm-200 bg-white focus:ring-2 focus:ring-accent-500 outline-none font-bold text-warm-900 text-sm">
+            </label>
+            <label class="block">
+              <span class="text-xs font-bold text-warm-800">Suku Cadang & Pompa Air / Bulan</span>
+              <input id="calc-alat" type="number" value="200000" class="mt-1 w-full px-4 py-3 rounded-xl border border-warm-200 bg-white focus:ring-2 focus:ring-accent-500 outline-none font-bold text-warm-900 text-sm">
+            </label>
+          </div>
+
+          <!-- Sensitivity Slider Widget -->
+          <div class="p-4 bg-white rounded-2xl border border-warm-200 space-y-4">
+            <div class="flex justify-between items-center text-xs font-bold">
+              <span class="text-warm-800">Skenario Pelemahan Rupiah</span>
+              <span id="shock-label" class="text-accent-600 bg-accent-50 px-2 py-0.5 rounded border border-accent-200">5%</span>
+            </div>
+            <input id="shock" type="range" min="1" max="25" value="5" class="w-full accent-accent-600 cursor-pointer">
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mt-4 text-center">
+              <div class="p-3 bg-red-50 border border-red-100 rounded-xl">
+                <span class="block text-[9px] font-bold text-red-500 uppercase">Tambahan Beban</span>
+                <strong id="calc-extra" class="text-red-700 text-base block mt-0.5">-</strong>
+              </div>
+              <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl">
+                <span class="block text-[9px] font-bold text-slate-500 uppercase">Total Awal</span>
+                <strong id="calc-base" class="text-slate-800 text-base block mt-0.5">-</strong>
+              </div>
+              <div class="p-3 bg-slate-50 border border-slate-100 rounded-xl">
+                <span class="block text-[9px] font-bold text-slate-500 uppercase">Total Baru</span>
+                <strong id="calc-new" class="text-slate-800 text-base block mt-0.5">-</strong>
+              </div>
+              <div class="p-3 bg-amber-50 border border-amber-100 rounded-xl">
+                <span class="block text-[9px] font-bold text-amber-500 uppercase">Kurs Skenario</span>
+                <strong id="calc-rate" class="text-amber-700 text-base block mt-0.5">-</strong>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-[10px] text-slate-400 leading-relaxed">
+            Metodologi Skenario: pupuk (koefisien sensitivitas 0.7x), BBM (0.5x), sembako impor (0.35x), alat mesin (0.8x). Ini adalah model edukasi skematis, bukan prediksi pasar resmi pemerintah.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Peta Kerentanan Wilayah & Titik Regional -->
+  <section id="peta" class="py-20 px-4 sm:px-8 bg-warm-100/20 border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Geografi Risiko</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Peta Zona Sensitivitas Kurs Indonesia</h3>
+        <p class="text-warm-800 text-sm">Klik salah satu titik region di bawah untuk melihat pola risiko logistik dan mitigasi lokal.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 items-stretch">
+        
+        <!-- Peta SVG Container -->
+        <div class="lg:col-span-3 bg-white rounded-3xl border border-warm-200 p-4 sm:p-6 shadow-sm overflow-hidden flex items-center justify-center">
+          <svg viewBox="0 0 900 420" class="w-full h-auto" role="img" aria-label="Peta skematik wilayah kerentanan Indonesia">
+            <rect width="900" height="420" rx="16" fill="#FDFBF7"/>
+            
+            <!-- Sumatra Area -->
+            <path d="M95 180 C160 150, 260 160, 330 205 C260 230, 160 230, 95 180" fill="#EAE2CF" stroke="#C8B99D" stroke-width="1.5"/>
+            <!-- Jawa Area -->
+            <path d="M360 230 C430 200, 520 210, 590 250 C500 280, 430 280, 360 230" fill="#E8DDD2" stroke="#D3BFA7" stroke-width="1.5"/>
+            <!-- Sulawesi Area -->
+            <path d="M395 115 C450 70, 550 85, 610 150 C520 165, 455 155, 395 115" fill="#E2F1E4" stroke="#BCD8C1" stroke-width="1.5"/>
+            <!-- Maluku/Papua Area -->
+            <path d="M625 170 C690 140, 760 150, 820 190 C750 225, 675 215, 625 170" fill="#FCE9DC" stroke="#ECC4AA" stroke-width="1.5"/>
+            
+            <!-- Map Interactive Points -->
+            <g class="map-point" onclick="selectRegion('sumatra')" style="cursor:pointer">
+              <circle cx="190" cy="185" r="14" fill="#10B981" class="transition-all hover:scale-125"/>
+              <text x="210" y="190" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Sumatra</text>
+            </g>
+            <g class="map-point" onclick="selectRegion('java')" style="cursor:pointer">
+              <circle cx="480" cy="245" r="14" fill="#EF4444" class="transition-all hover:scale-125"/>
+              <text x="500" y="250" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Jawa</text>
+            </g>
+            <g class="map-point" onclick="selectRegion('sulawesi')" style="cursor:pointer">
+              <circle cx="505" cy="125" r="14" fill="#10B981" class="transition-all hover:scale-125"/>
+              <text x="525" y="130" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Sulawesi</text>
+            </g>
+            <g class="map-point" onclick="selectRegion('pesisir')" style="cursor:pointer">
+              <circle cx="705" cy="185" r="14" fill="#EF4444" class="transition-all hover:scale-125"/>
+              <text x="725" y="190" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Pesisir Timur</text>
+            </g>
+            <g class="map-point" onclick="selectRegion('timur')" style="cursor:pointer">
+              <circle cx="745" cy="300" r="14" fill="#F59E0B" class="transition-all hover:scale-125"/>
+              <text x="765" y="305" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Indo Timur</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Detail Panel -->
+        <div class="lg:col-span-2 bg-warm-900 text-white rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg">
+          <div>
+            <span id="region-risk" class="inline-block px-3 py-1 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-200 border border-emerald-400/30">Klik Titik Peta</span>
+            <h4 id="region-title" class="text-2xl font-serif font-black mt-4">Pilih Wilayah</h4>
+            <p id="region-desc" class="text-xs text-warm-200 leading-relaxed mt-3">Setiap zona memiliki karakteristik ancaman dan keuntungan kurs yang berbeda. Klik nama daerah untuk memuat laporan.</p>
+          </div>
+          <div class="mt-8 p-4 bg-white/10 rounded-2xl border border-white/10">
+            <span class="block text-[10px] uppercase tracking-widest font-bold text-accent-200">REKOMENDASI MITIGASI</span>
+            <p id="region-action" class="text-xs font-semibold mt-2">Pilih salah satu titik daerah untuk memuat panduan strategis.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Substitusi Impor: Aksi Nyata Sektor Tani & Nelayan -->
+  <section id="substitusi" class="py-20 px-4 sm:px-8 bg-white border-b border-warm-200">
+    <div class="max-w-6xl mx-auto space-y-12">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Langkah Konkret</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Barang Mana yang Bisa Dikurangi Ketergantungannya?</h3>
+        <p class="text-warm-800 text-sm">Bukan berarti semua impor harus dihentikan. Yang penting, desa tahu titik rawan mana yang bisa dikurangi pelan-pelan.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="flex flex-wrap gap-2 justify-center">
+        <button onclick="filterSub('all')" class="sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-accent-600 text-white" data-filter="all">Semua</button>
+        <button onclick="filterSub('tani')" class="sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-white border border-warm-200 text-warm-800" data-filter="tani">Pertanian</button>
+        <button onclick="filterSub('pangan')" class="sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-white border border-warm-200 text-warm-800" data-filter="pangan">Pangan</button>
+        <button onclick="filterSub('energi')" class="sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-white border border-warm-200 text-warm-800" data-filter="energi">Energi & Solar</button>
+      </div>
+
+      <!-- Substitutions Grid -->
+      <div id="sub-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Complete Impact Matrix: Infographic Table Layout -->
+  <section id="tabel-dampak" class="py-20 px-4 sm:px-8 bg-warm-50 border-b border-warm-200">
+    <div class="max-w-5xl mx-auto space-y-10">
+      <div class="text-center max-w-2xl mx-auto space-y-3">
+        <h2 class="text-xs font-bold uppercase tracking-wide text-accent-700">Matriks Komparasi</h2>
+        <h3 class="text-3xl font-serif font-black text-warm-900">Matriks Risiko Sektor Desa</h3>
+        <p class="text-warm-800 text-sm">Pemetaan kerentanan faktual berdasarkan pilar aktivitas mata pencaharian pedesaan.</p>
+      </div>
+
+      <div class="overflow-hidden rounded-3xl border border-warm-200 shadow-sm bg-white">
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-warm-200 text-xs sm:text-sm">
+            <thead class="bg-warm-100">
+              <tr>
+                <th class="px-6 py-4 text-left font-bold text-warm-900">Kerentanan</th>
+                <th class="px-6 py-4 text-left font-bold text-warm-900">Pekerjaan</th>
+                <th class="px-6 py-4 text-left font-bold text-warm-900">Pemicu Kritis</th>
+                <th class="px-6 py-4 text-left font-bold text-warm-900">Solusi Alternatif</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-warm-200">
+              <tr class="hover:bg-warm-50/50 transition-colors">
+                <td class="px-6 py-4 font-black text-red-600">Sangat Tinggi</td>
+                <td class="px-6 py-4">Nelayan Tradisional, Petani Pupuk Kimia, Importir Kelontong</td>
+                <td class="px-6 py-4">Sangat sensitif harga solar operasional dan obat kimia impor.</td>
+                <td class="px-6 py-4 text-slate-500">Koperasi BBM komunal, pemetaan GPS, beralih ke pupuk kandang.</td>
+              </tr>
+              <tr class="hover:bg-warm-50/50 transition-colors">
+                <td class="px-6 py-4 font-bold text-amber-600">Menengah</td>
+                <td class="px-6 py-4">Buruh Tani Harian, Ojek/Sopir, Pemilik Warung Kecil</td>
+                <td class="px-6 py-4">Kenaikan ongkos jalan raya dan turunnya daya beli warga desa.</td>
+                <td class="px-6 py-4 text-slate-500">Penyediaan pangan lokal, rute logistik gabungan antardesa.</td>
+              </tr>
+              <tr class="hover:bg-warm-50/50 transition-colors">
+                <td class="px-6 py-4 font-bold text-emerald-600">Bisa Diuntungkan</td>
+                <td class="px-6 py-4">Petani Kebun Ekspor (Kopi/Kakao), Penerima Remitansi TKI</td>
+                <td class="px-6 py-4">Menerima rupiah hasil konversi nilai ekspor dolar yang melonjak.</td>
+                <td class="px-6 py-4 text-slate-500">Investasi infrastruktur sawah mandiri, hindari utang tengkulak.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Conclusion -->
+  <section class="py-20 px-4 sm:px-8 bg-white">
+    <div class="max-w-3xl mx-auto text-center space-y-8">
+      <span class="text-4xl">💡</span>
+      <h3 class="text-3xl font-serif font-black text-warm-900">Kesimpulan: Desa Terhubung dengan Dunia</h3>
+      <div class="text-warm-800 text-base leading-relaxed space-y-4">
+        <p>
+          Rakyat desa tidak bertransaksi memakai uang dolar. Tapi desa tetap hidup dalam ekonomi yang saling terhubung. Kurs dolar ikut memengaruhi <strong>biaya produksi, harga jual hasil bumi, dan daya beli belanja harian.</strong>
+        </p>
+        <p class="font-bold text-warm-900 border-l-4 border-accent-600 pl-4 py-2 italic text-left max-w-xl mx-auto">
+          "Yang penting bukan punya dolar. Yang penting paham dampaknya, supaya keluarga, petani, nelayan, dan pedagang kecil bisa mengambil langkah lebih cepat."
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-warm-900 text-warm-300 py-12 px-4 sm:px-8 border-t border-warm-800 text-center text-xs">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center space-x-2 text-white font-bold">
+        <div class="w-6 h-6 rounded bg-accent-600 flex items-center justify-center text-xs">$</div>
+        <span>Rakyat & Dolar © 2026</span>
+      </div>
+      <div class="flex items-center space-x-6 text-[11px] font-semibold">
+        <span onclick="openExportModal()" class="hover:text-white transition-colors cursor-pointer">Struktur Mind Map</span>
+        <span class="hover:text-white transition-colors cursor-pointer">Panduan Mitigasi</span>
+        <span class="hover:text-white transition-colors cursor-pointer">Tentang</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal for Raw Export Data -->
+  <div id="export-modal" class="fixed inset-0 z-50 hidden bg-warm-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full border border-warm-200 shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
+      
+      <div class="p-6 border-b border-warm-100 flex justify-between items-center bg-warm-50">
+        <div>
+          <h3 class="font-serif font-black text-warm-900 text-lg">Ekspor Struktur Data Mind Map</h3>
+          <p class="text-xs text-slate-500 mt-0.5">Format Markdown Lengkap 9 Cabang Utama</p>
+        </div>
+        <button onclick="closeExportModal()" class="w-8 h-8 rounded-lg hover:bg-warm-100 transition-colors flex items-center justify-center text-slate-400">
+          ✕
+        </button>
+      </div>
+
+      <div class="p-6 overflow-y-auto flex-1 custom-scrollbar">
+        <textarea id="raw-markdown-data" readonly class="w-full h-80 p-4 border border-warm-200 rounded-2xl bg-warm-50 font-mono text-[10px] text-warm-900 focus:outline-none focus:ring-2 focus:ring-accent-500 custom-scrollbar"># Dampak Dolar ke Rupiah bagi Rakyat Desa (Mind Map Lengkap)
+
+## 1. Jawaban Singkat
+- Rakyat desa tetap terpengaruh dolar walau jarang memakai secara langsung.
+- Pengaruhnya datang lewat harga barang impor dan energi.
+
+## 2. Mengapa Dolar Berpengaruh?
+- **Rupiah Melemah terhadap Dolar:** Barang impor lebih mahal, biaya produksi naik, harga distribusi terdorong, inflasi meningkat.
+- **Rupiah Menguat terhadap Dolar:** Barang impor lebih murah, tekanan harga berkurang, biaya bahan baku turun, daya beli membaik.
+
+## 3. Jalur Dampak ke Desa
+- **Harga BBM & Energi:** Minyak dunia dihitung dalam dolar, memicu penyesuaian harga Solar/Pertalite serta ongkos transportasi barang.
+- **Pupuk & Obat Pertanian:** Banyak bahan baku terkait impor. Menyeret harga pupuk kimia non-subsidi & pestisida naik.
+- **Sembako & Barang Harian:** Kedelai (tahu/tempe), gandum (mie), dan gula pasir terdampak rantai impor.
+- **Alat & Barang Rumah Tangga:** Handphone, suku cadang motor/pompa air memiliki kandungan komponen impor yang sensitif kurs.
+
+## 4. Dampak bagi Petani
+- **Biaya Produksi:** Pupuk lebih mahal, BBM alat tani naik, ongkos angkut naik, marjin keuntungan turun.
+- **Harga Jual Panen:** Komoditas ekspor (kopi, kakao, sawit) untung saat dolar naik. Petani pangan lokal tertekan daya beli lokal.
+- **Risiko Ketimpangan:** Petani ekspor makmur, petani lokal stagnan, buruh tani paling rentan tercekik.
+
+## 5. Dampak bagi Nelayan
+- **Biaya Melaut:** Solar menyedot 70% pengeluaran, es & logistik naik, perawatan mesin impor mahal.
+- **Harga Ikan:** Ikan premium ekspor naik nilai, pasar lokal bergantung daya beli daerah, nelayan kecil dirugikan rumitnya rantai tengkulak.
+
+## 6. Dampak bagi Buruh & Keluarga Desa
+- **Daya Beli:** Upah harian naik lambat, harga sembako melompat cepat, konsumsi terpaksa dihemat, tabungan nihil.
+- **Pendidikan & Kesehatan:** Anggaran transportasi sekolah naik, obat impor tertentu mahal, beban keluarga membengkak.
+
+## 7. Siapa Paling Terpengaruh?
+- **Sangat Terpengaruh:** Petani pupuk kimia, nelayan mesin BBM, pedagang barang impor, keluarga miskin.
+- **Cukup Terpengaruh:** Buruh tani, sopir angkutan desa, pemilik warung kelontong.
+- **Bisa Diuntungkan:** Petani komoditas ekspor, penerima kiriman luar negeri (TKI), eksportir kerajinan lokal.
+
+## 8. Contoh Sederhana
+- **Jika Dolar Naik:** Pupuk kimia naik, BBM & ongkos angkut naik, harga sembako warung naik, Uang belanja merasa kurang.
+- **Jika Dolar Turun:** Tekanan harga turun, barang impor murah, marjin membaik, tapi efek ke bawah lambat terasa.
+
+## 9. Kesimpulan Akhir
+- Desa terhubung erat dengan rantai ekonomi global. Kurs rupiah-dolar menentukan ongkos tani, nelayan, dan belanja harian. Warga desa butuh paham pergerakan kurs dolar demi ketahanan mandiri.</textarea>
+      </div>
+
+      <div class="p-6 border-t border-warm-100 flex justify-end space-x-3 bg-warm-50">
+        <button onclick="closeExportModal()" class="px-4 py-2 border border-warm-200 hover:bg-warm-100 rounded-xl text-xs font-semibold text-warm-800">Tutup</button>
+        <button onclick="copyRawData()" class="px-5 py-2 bg-accent-600 hover:bg-accent-700 rounded-xl text-xs font-bold text-white shadow-sm flex items-center space-x-1">
+          <span id="btn-copy-text">Salin Ke Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Faktual state
+    let usdIdrRate = 16000;
+    const fallbackRate = 16000;
+    const fmtIDR = (n) => new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(Number(n)||0);
+    const fmtNum = (n) => new Intl.NumberFormat('id-ID', { maximumFractionDigits: 0 }).format(Number(n)||0);
+
+    // Live Exchange Rate API
+    async function loadExchangeRate() {
+      const rateEl = document.getElementById('live-rate');
+      if (!rateEl) return;
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/USD', { cache: 'no-store' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        if (!data || !data.rates || !data.rates.IDR) throw new Error('IDR rate missing');
+        usdIdrRate = Number(data.rates.IDR);
+        rateEl.textContent = 'Rp' + fmtNum(usdIdrRate);
+        document.getElementById('rate-status').textContent = 'LIVE';
+        document.getElementById('rate-status').className = 'text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-200';
+        document.getElementById('rate-time').textContent = data.time_last_update_utc ? new Date(data.time_last_update_utc).toLocaleString('id-ID') : new Date().toLocaleString('id-ID');
+      } catch (err) {
+        usdIdrRate = fallbackRate;
+        rateEl.textContent = 'Rp' + fmtNum(fallbackRate);
+        document.getElementById('rate-status').textContent = 'FALLBACK';
+        document.getElementById('rate-status').className = 'text-[9px] font-bold px-2 py-0.5 rounded bg-amber-500/20 text-amber-200';
+        document.getElementById('rate-time').textContent = 'API bermasalah, memakai asumsi dasar';
+      }
+      calculateImpact();
+    }
+
+    // Impact Sensitivity Calculation
+    function calculateImpact() {
+      const shock = Number(document.getElementById('shock')?.value || 5) / 100;
+      const shockPct = Math.round(shock * 100);
+      
+      const pupuk = Number(document.getElementById('calc-pupuk')?.value || 0);
+      const bbm = Number(document.getElementById('calc-bbm')?.value || 0);
+      const sembako = Number(document.getElementById('calc-sembako')?.value || 0);
+      const alat = Number(document.getElementById('calc-alat')?.value || 0);
+      
+      const base = pupuk + bbm + sembako + alat;
+      const extra = (pupuk * shock * 0.70) + (bbm * shock * 0.50) + (sembako * shock * 0.35) + (alat * shock * 0.80);
+      const scenarioRate = usdIdrRate * (1 + shock);
+      
+      if (document.getElementById('shock-label')) document.getElementById('shock-label').textContent = shockPct + '%';
+      if (document.getElementById('calc-extra')) document.getElementById('calc-extra').textContent = fmtIDR(extra);
+      if (document.getElementById('calc-base')) document.getElementById('calc-base').textContent = fmtIDR(base);
+      if (document.getElementById('calc-new')) document.getElementById('calc-new').textContent = fmtIDR(base + extra);
+      if (document.getElementById('calc-rate')) document.getElementById('calc-rate').textContent = 'Rp' + fmtNum(scenarioRate);
+    }
+
+    // Substitutions Items
+    const substitutionItems = [
+      {cat:'tani', title:'Pupuk kimia impor → Kompos & pupuk kandang matang', risk:'Tinggi', detail:'Kurangi porsi NPK/Urea non-subsidi dengan kompos matang, pupuk kandang fermentasi, dan bahan organik lokal. Tetap perlu uji tanah agar dosis tidak asal.'},
+      {cat:'tani', title:'Pestisida sintetis → Pestisida nabati terpadu', risk:'Sedang', detail:'Gunakan mimba, serai, bawang putih, perangkap hama, dan rotasi tanaman. Bukan pengganti total, tapi menurunkan frekuensi pembelian pestisida impor.'},
+      {cat:'pangan', title:'Gandum/mie instan → Singkong, jagung, sagu, umbi lokal', risk:'Tinggi', detail:'Diversifikasi karbohidrat lokal menekan paparan gandum impor. Cocok untuk program pangan desa dan UMKM olahan.'},
+      {cat:'pangan', title:'Kedelai impor → Kacang lokal & produksi kedelai desa', risk:'Tinggi', detail:'Tempe/tahu sangat sensitif kedelai impor. Dorong kontrak tanam kedelai lokal, kacang hijau, kacang tanah, dan olahan protein lokal.'},
+      {cat:'energi', title:'Solar operasional → Efisiensi rute & koperasi BBM', risk:'Tinggi', detail:'Nelayan dan sopir tidak bisa langsung lepas dari BBM. Dampak paling cepat: gabung pembelian kolektif, rawat mesin, rute hemat, dan jadwal angkut gabungan.'},
+      {cat:'energi', title:'Suku cadang impor → Bengkel reparasi & kanibalisasi aman', risk:'Sedang', detail:'Perpanjang umur pompa, motor, dan mesin tani lewat perawatan berkala. Suku cadang lokal standar bisa dipakai jika sesuai spesifikasi keamanan.'}
+    ];
+
+    function renderSubstitutions(filter='all') {
+      const grid = document.getElementById('sub-grid');
+      if (!grid) return;
+      grid.innerHTML = substitutionItems.filter(x => filter === 'all' || x.cat === filter).map(x => `
+        <article class="bg-warm-50 rounded-2xl border border-warm-200 p-5 shadow-sm hover:shadow-md transition-all">
+          <div class="flex items-start justify-between gap-3 mb-3">
+            <h4 class="font-bold text-warm-900 text-sm leading-snug">${x.title}</h4>
+            <span class="shrink-0 text-[9px] font-bold px-2 py-0.5 rounded ${x.risk==='Tinggi' ? 'bg-red-50 text-red-600 border border-red-100' : 'bg-amber-50 text-amber-600 border border-amber-100'}">${x.risk}</span>
+          </div>
+          <p class="text-xs text-warm-800 leading-relaxed">${x.detail}</p>
+        </article>`).join('');
+      
+      document.querySelectorAll('.sub-filter').forEach(btn => {
+        const active = btn.dataset.filter === filter;
+        btn.className = active ? 'sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-accent-600 text-white' : 'sub-filter px-4 py-2 rounded-xl text-xs font-bold bg-white border border-warm-200 text-warm-800';
+      });
+    }
+    
+    function filterSub(filter) { renderSubstitutions(filter); }
+
+    // Regional Map Data
+    const regions = {
+      sumatra:{title:'Sumatra: Kebun Sawit & Kopi Ekspor', risk:'Peluang + Risiko', cls:'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30', desc:'Sebagian wilayah Sumatra diuntungkan komoditas ekspor seperti sawit, kopi, dan karet saat dolar naik. Tapi petani kecil tetap terkena pupuk, BBM, dan suku cadang mahal.', action:'Amankan surplus ekspor untuk investasi fasilitas pascapanen mandiri, kurangi porsi pupuk kimia impor.'},
+      java:{title:'Jawa: Konsumsi Pangan & Kepadatan Logistik', risk:'Risiko Tinggi', cls:'bg-red-500/20 text-red-200 border border-red-400/30', desc:'Jawa sangat sensitif karena ketergantungan pangan olahan (gandum/mie) dan bahan baku tahu-tempe impor. Perubahan harga cepat menekan jutaan buruh harian.', action:'Perkuat penanaman subsisten pekarangan keluarga, dorong pengadaan beras komunal antardesa.'},
+      sulawesi:{title:'Sulawesi: Produksi Kakao & Tangkapan Laut', risk:'Peluang + Risiko', cls:'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30', desc:'Kakao dan tangkapan ikan premium bisa diuntungkan kurs ekspor, namun terkendala tingginya ongkos pendingin es elektrik dan solar perahu.', action:'Bangun pendingin bertenaga surya kolektif, perbaiki posisi tawar dengan eksportir langsung.'},
+      pesisir:{title:'Pesisir Timur: Nelayan Tradisional Rentan Solar', risk:'Sangat Rentan', cls:'bg-red-500/20 text-red-200 border border-red-400/30', desc:'Nelayan kepulauan dan pesisir timur terancam langsung oleh solar eceran yang menyerap 70% ongkos jalan. Hasil tangkapan lokal belum menutupi marjin.', action:'Gunakan rute kompas GPS hemat bahan bakar, bangun koperasi es nelayan pedesaan.'},
+      timur:{title:'Indonesia Timur: Beban Logistik Pulau & Bahan Pokok', risk:'Rentan Logistik', cls:'bg-amber-500/20 text-amber-200 border border-amber-400/30', desc:'Jarak pengiriman laut membuat harga barang impor dan suku cadang melonjak lebih ekstrem di timur saat biaya pengiriman global berbasis Dolar terganggu.', action:'Fokus lumbung pangan lokal (sagu/umbi), batasi konsumsi mie instan komersial impor.'}
+    };
+
+    function selectRegion(id) {
+      const r = regions[id]; if (!r) return;
+      document.getElementById('region-title').textContent = r.title;
+      document.getElementById('region-risk').textContent = r.risk;
+      document.getElementById('region-risk').className = 'inline-block px-3 py-1 rounded-full text-[10px] font-bold ' + r.cls;
+      document.getElementById('region-desc').textContent = r.desc;
+      document.getElementById('region-action').textContent = r.action;
+    }
+
+    // Persona Selection
+    const dataPersonas = {
+      'buruh': {
+        title: "Buruh Tani / Harian Lepas",
+        badge: "Paling Terhantam (⚠️)",
+        badgeClass: "bg-red-50 text-red-700 border-red-200",
+        impact: "Kelompok paling terancam saat rupiah melemah. Upah harian Anda dinilai tetap, padahal harga beras, minyak goreng, tahu-tempe (kedelai impor), dan obat-obatan melesat naik di warung kelontong desa. Daya beli rumah tangga terjepit parah.",
+        strategy: "Disarankan mengurangi konsumsi makanan kemasan / mie instan yang berbahan dasar gandum impor. Maksimalkan menanam sayur lokal di pekarangan rumah untuk mengamankan ketahanan pangan mandiri tanpa bergantung penuh ke pasar."
+      },
+      'petani-ekspor': {
+        title: "Petani Komoditas Ekspor (Kopi/Cengkeh)",
+        badge: "Diuntungkan (💰)",
+        badgeClass: "bg-emerald-50 text-emerald-700 border-emerald-200",
+        impact: "Meskipun pupuk dan solar naik, hasil panen Anda (Kopi, Kakao, Cengkeh, Sawit) dihargai dalam Dolar di pasar internasional. Anda menerima konversi Rupiah yang jauh melimpah saat Dolar naik tajam.",
+        strategy: "Manfaatkan keuntungan berlebih (durian runtuh) untuk modal investasi infrastruktur mandiri (seperti membeli genset, pompa hemat energi, atau beralih ke pupuk organik lokal buatan desa untuk memotong ketergantungan impor kimia)."
+      },
+      'nelayan': {
+        title: "Nelayan Tradisional Motor Tempel",
+        badge: "Sangat Rentan (⚠️)",
+        badgeClass: "bg-red-50 text-red-700 border-red-200",
+        impact: "Biaya BBM (Solar) memakan hampir 70% dari seluruh modal melaut. Kenaikan harga minyak mentah global berbasis Dolar langsung memangkas pendapatan bersih tangkapan Anda secara drastis.",
+        strategy: "Bentuk kelompok nelayan mandiri untuk melakukan pengadaan logistik es & solar secara kolektif (memotong broker tengah). Gunakan teknologi penunjuk arah GPS terjangkau untuk memperpendek rute melaut dan menghemat konsumsi BBM perahu."
+      },
+      'pemilik-warung': {
+        title: "Pemilik Warung Kelontong Desa",
+        badge: "Dilema Marjin (⚖️)",
+        badgeClass: "bg-amber-50 text-amber-700 border-amber-200",
+        impact: "Terjebak di tengah. Jika Anda menaikkan harga jual mie instan, telur, dan gula pasir mengikuti distributor kota, pembeli desa akan berkurang drastis. Tetapi jika Anda menahan harga, laba bersih warung terancam terkikis.",
+        strategy: "Perbanyak pasokan bahan pokok lokal non-impor (gula kelapa desa, umbi-umbian, beras sawah tetangga) yang tidak sensitif terhadap kurs dolar. Kurangi stok barang bermargin tipis dan rawan kadaluarsa jika daya beli menurun."
+      }
+    };
+
+    function selectPersona(id) {
+      const p = dataPersonas[id];
+      if (!p) return;
+      document.getElementById('persona-title').textContent = p.title;
+      document.getElementById('persona-subtitle').textContent = `Profil Terpilih`;
+      document.getElementById('persona-badge').textContent = p.badge;
+      document.getElementById('persona-badge').className = `px-3 py-1 rounded-full text-xs font-bold border ${p.badgeClass}`;
+      document.getElementById('persona-impact').innerHTML = p.impact;
+      document.getElementById('persona-strategy').innerHTML = p.strategy;
+
+      const buttons = ['buruh', 'petani-ekspor', 'nelayan', 'pemilik-warung'];
+      buttons.forEach(bId => {
+        const btn = document.getElementById(`btn-p-${bId}`);
+        if (bId === id) {
+          btn.className = "px-5 py-2.5 rounded-xl border-2 border-accent-600 bg-accent-50 text-xs font-bold text-accent-700 transition-all shadow-sm focus:outline-none";
+        } else {
+          btn.className = "px-5 py-2.5 rounded-xl border border-warm-200 bg-white hover:bg-warm-50 text-xs font-bold text-warm-800 transition-all shadow-sm focus:outline-none";
+        }
+      });
+    }
+
+    // Modal Control
+    function openExportModal() { document.getElementById('export-modal').classList.remove('hidden'); }
+    function closeExportModal() { document.getElementById('export-modal').classList.add('hidden'); }
+    function copyRawData() {
+      const copyText = document.getElementById("raw-markdown-data");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      navigator.clipboard.writeText(copyText.value);
+      
+      const btnText = document.getElementById('btn-copy-text');
+      btnText.textContent = "Berhasil Disalin!";
+      setTimeout(() => { btnText.textContent = "Salin Ke Clipboard"; }, 2000);
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeExportModal();
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      ['calc-pupuk','calc-bbm','calc-sembako','calc-alat','shock'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.addEventListener('input', calculateImpact);
+      });
+      renderSubstitutions('all');
+      selectRegion('sumatra');
+      loadExchangeRate();
+    });
+  </script>
+</body>
+</html>
