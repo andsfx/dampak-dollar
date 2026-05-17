@@ -600,35 +600,41 @@
           <svg viewBox="0 0 900 420" class="w-full h-auto" role="img" aria-label="Peta skematik wilayah kerentanan Indonesia">
             <rect width="900" height="420" rx="16" fill="#FDFBF7"/>
             
-            <!-- Sumatra Area -->
-            <path d="M95 180 C160 150, 260 160, 330 205 C260 230, 160 230, 95 180" fill="#EAE2CF" stroke="#A89068" stroke-width="1.5"/>
-            <!-- Jawa Area -->
-            <path d="M360 230 C430 200, 520 210, 590 250 C500 280, 430 280, 360 230" fill="#E8DDD2" stroke="#B89A7A" stroke-width="1.5"/>
-            <!-- Sulawesi Area -->
-            <path d="M395 115 C450 70, 550 85, 610 150 C520 165, 455 155, 395 115" fill="#E2F1E4" stroke="#8FB896" stroke-width="1.5"/>
-            <!-- Maluku/Papua Area -->
-            <path d="M625 170 C690 140, 760 150, 820 190 C750 225, 675 215, 625 170" fill="#FCE9DC" stroke="#D19A6E" stroke-width="1.5"/>
+            <!-- Sumatra: elongated vertical island, northwest -->
+            <path d="M100 80 L120 90 L140 110 L155 140 L165 170 L170 200 L165 230 L155 260 L140 280 L120 270 L105 250 L95 220 L90 190 L90 160 L95 130 L100 100 Z" fill="#EAE2CF" stroke="#A89068" stroke-width="1.5"/>
+            
+            <!-- Jawa: horizontal island below Sumatra -->
+            <path d="M280 240 L320 235 L360 238 L400 242 L440 245 L480 248 L520 250 L510 265 L490 275 L460 280 L420 278 L380 275 L340 270 L300 265 L280 255 Z" fill="#E8DDD2" stroke="#B89A7A" stroke-width="1.5"/>
+            
+            <!-- Kalimantan: large square-ish island, center-north -->
+            <path d="M300 100 L350 95 L400 100 L450 110 L490 125 L520 145 L540 170 L545 200 L540 225 L520 235 L480 240 L440 235 L400 225 L360 210 L330 190 L310 165 L300 135 Z" fill="#E2F1E4" stroke="#8FB896" stroke-width="1.5"/>
+            
+            <!-- Sulawesi: distinctive K-shape, east-center -->
+            <path d="M520 120 L540 115 L560 120 L575 135 L585 155 L590 175 L595 195 L600 215 L605 235 L610 255 L605 260 L595 258 L585 250 L575 235 L570 215 L565 200 L560 185 L555 170 L550 155 L545 140 L535 130 Z M575 160 L590 155 L605 160 L615 175 L620 190 L615 200 L605 195 L595 185 L585 175 Z" fill="#E8DDD2" stroke="#B89A7A" stroke-width="1.5"/>
+            
+            <!-- Maluku & Papua: cluster of islands + large eastern mass -->
+            <path d="M650 180 L665 175 L680 180 L690 190 L695 205 L690 215 L680 210 L670 200 Z M710 160 L725 155 L740 160 L750 170 L755 185 L750 195 L740 190 L730 180 Z M770 140 L810 135 L840 145 L860 165 L870 190 L875 215 L870 240 L855 265 L830 280 L800 285 L770 280 L745 265 L730 240 L725 215 L730 190 L745 170 L760 155 Z" fill="#FCE9DC" stroke="#D19A6E" stroke-width="1.5"/>
             
             <!-- Map Interactive Points -->
             <g class="map-point" onclick="selectRegion('sumatra')" tabindex="0" role="button" aria-pressed="false" aria-label="Sumatra: Kebun Sawit & Kopi Ekspor">
-              <circle cx="190" cy="185" r="22" fill="#10B981" class="transition-all hover:scale-125"/>
-              <text x="210" y="190" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Sumatra</text>
+              <circle cx="175" cy="180" r="22" fill="#10B981" class="transition-all hover:scale-125"/>
+              <text x="195" y="185" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Sumatra</text>
             </g>
             <g class="map-point" onclick="selectRegion('java')" tabindex="0" role="button" aria-pressed="false" aria-label="Jawa: Konsumsi Pangan & Kepadatan Logistik">
-              <circle cx="480" cy="245" r="22" fill="#EF4444" class="transition-all hover:scale-125"/>
-              <text x="500" y="250" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Jawa</text>
+              <circle cx="400" cy="260" r="22" fill="#EF4444" class="transition-all hover:scale-125"/>
+              <text x="420" y="265" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Jawa</text>
             </g>
             <g class="map-point" onclick="selectRegion('sulawesi')" tabindex="0" role="button" aria-pressed="false" aria-label="Sulawesi: Produksi Kakao & Tangkapan Laut">
-              <circle cx="505" cy="125" r="22" fill="#10B981" class="transition-all hover:scale-125"/>
-              <text x="525" y="130" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Sulawesi</text>
+              <circle cx="585" cy="190" r="22" fill="#10B981" class="transition-all hover:scale-125"/>
+              <text x="605" y="195" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Sulawesi</text>
             </g>
-            <g class="map-point" onclick="selectRegion('pesisir')" tabindex="0" role="button" aria-pressed="false" aria-label="Pesisir Timur: Nelayan Tradisional Rentan Solar">
-              <circle cx="705" cy="185" r="22" fill="#EF4444" class="transition-all hover:scale-125"/>
-              <text x="725" y="190" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Pesisir Timur</text>
+            <g class="map-point" onclick="selectRegion('kalimantan')" tabindex="0" role="button" aria-pressed="false" aria-label="Kalimantan: Tambang Batubara & Sawit Pesisir">
+              <circle cx="425" cy="170" r="22" fill="#10B981" class="transition-all hover:scale-125"/>
+              <text x="445" y="175" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Kalimantan</text>
             </g>
-            <g class="map-point" onclick="selectRegion('timur')" tabindex="0" role="button" aria-pressed="false" aria-label="Indonesia Timur: Beban Logistik Pulau & Bahan Pokok">
-              <circle cx="745" cy="300" r="22" fill="#F59E0B" class="transition-all hover:scale-125"/>
-              <text x="765" y="305" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Indo Timur</text>
+            <g class="map-point" onclick="selectRegion('maluku-papua')" tabindex="0" role="button" aria-pressed="false" aria-label="Maluku & Papua: Logistik Kepulauan Ekstrem">
+              <circle cx="750" cy="210" r="22" fill="#EF4444" class="transition-all hover:scale-125"/>
+              <text x="770" y="215" font-family="Plus Jakarta Sans" font-size="14" font-weight="800" fill="#2A1F13">Maluku & Papua</text>
             </g>
             <script>
               document.querySelectorAll('.map-point').forEach(point => {
@@ -934,8 +940,8 @@
       sumatra:{title:'Sumatra: Kebun Sawit & Kopi Ekspor', risk:'Peluang + Risiko', cls:'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30', desc:'Sebagian wilayah Sumatra diuntungkan komoditas ekspor seperti sawit, kopi, dan karet saat dolar naik. Tapi petani kecil tetap terkena pupuk, BBM, dan suku cadang mahal.', action:'Amankan surplus ekspor untuk investasi fasilitas pascapanen mandiri, kurangi porsi pupuk kimia impor.'},
       java:{title:'Jawa: Konsumsi Pangan & Kepadatan Logistik', risk:'Risiko Tinggi', cls:'bg-red-500/20 text-red-200 border border-red-400/30', desc:'Jawa sangat sensitif karena ketergantungan pangan olahan (gandum/mie) dan bahan baku tahu-tempe impor. Perubahan harga cepat menekan jutaan buruh harian.', action:'Perkuat penanaman subsisten pekarangan keluarga, dorong pengadaan beras komunal antardesa.'},
       sulawesi:{title:'Sulawesi: Produksi Kakao & Tangkapan Laut', risk:'Peluang + Risiko', cls:'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30', desc:'Kakao dan tangkapan ikan premium bisa diuntungkan kurs ekspor, namun terkendala tingginya ongkos pendingin es elektrik dan solar perahu.', action:'Bangun pendingin bertenaga surya kolektif, perbaiki posisi tawar dengan eksportir langsung.'},
-      pesisir:{title:'Pesisir Timur: Nelayan Tradisional Rentan Solar', risk:'Sangat Rentan', cls:'bg-red-500/20 text-red-200 border border-red-400/30', desc:'Nelayan kepulauan dan pesisir timur terancam langsung oleh solar eceran yang menyerap 70% ongkos jalan. Hasil tangkapan lokal belum menutupi marjin.', action:'Gunakan rute kompas GPS hemat bahan bakar, bangun koperasi es nelayan pedesaan.'},
-      timur:{title:'Indonesia Timur: Beban Logistik Pulau & Bahan Pokok', risk:'Rentan Logistik', cls:'bg-amber-500/20 text-amber-200 border border-amber-400/30', desc:'Jarak pengiriman laut membuat harga barang impor dan suku cadang melonjak lebih ekstrem di timur saat biaya pengiriman global berbasis Dolar terganggu.', action:'Fokus lumbung pangan lokal (sagu/umbi), batasi konsumsi mie instan komersial impor.'}
+      kalimantan:{title:'Kalimantan: Tambang Batubara & Sawit Pesisir', risk:'Peluang + Risiko', cls:'bg-emerald-500/20 text-emerald-200 border border-emerald-400/30', desc:'Batubara dan sawit diuntungkan ekspor saat dolar naik. Nelayan pesisir timur Kalimantan rentan solar mahal. Infrastruktur jalan masih terbatas di pedalaman.', action:'Diversifikasi pendapatan nelayan dengan budidaya tambak, optimalkan rute angkut batubara untuk efisiensi BBM.'},
+      'maluku-papua':{title:'Maluku & Papua: Logistik Kepulauan Ekstrem', risk:'Sangat Rentan', cls:'bg-red-500/20 text-red-200 border border-red-400/30', desc:'Jarak laut terjauh membuat semua barang impor dan BBM paling mahal se-Indonesia. Ketergantungan pada kapal kargo dan pesawat perintis sangat tinggi.', action:'Prioritaskan lumbung pangan lokal (sagu, ubi, ikan), bangun koperasi solar nelayan, kurangi ketergantungan mie instan impor.'}
     };
 
     function selectRegion(id) {
