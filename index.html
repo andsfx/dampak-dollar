@@ -6,61 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Warga Desa & Kurs Dolar - Analisis Dampak Faktual</title>
   
-  <!-- Google Fonts: DM Sans & Playfair Display -->
+  <!-- Fonts: Source Serif 4 + Inter (editorial infographic) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['DM Sans', 'sans-serif'],
-            serif: ['Playfair Display', 'serif'],
-          },
-          colors: {
-            warm: {
-              50: '#FDFBF7',
-              100: '#FAF6EE',
-              200: '#F3EAD8',
-              300: '#E7D9BD',
-              800: '#433422',
-              900: '#2A1F13',
-            },
-            accent: {
-              50: '#F5F3FF',
-              100: '#EDE9FE',
-              200: '#DDD6FE',
-              500: '#8B5CF6',
-              600: '#7C3AED',
-              700: '#6D28D9',
-              900: '#4C1D95',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    body {
-      background-color: #FAF9F6;
-      color: #2D3748;
-    }
-    .custom-scrollbar::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
-    }
-    .custom-scrollbar::-webkit-scrollbar-track {
-      background: #F3EAD8;
-    }
-    .custom-scrollbar::-webkit-scrollbar-thumb {
-      background: #C8B99D;
-      border-radius: 3px;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./output.css">
 </head>
 <body class="font-sans antialiased selection:bg-accent-200 selection:text-accent-900">
 
@@ -568,23 +518,23 @@
             <!-- Map Interactive Points -->
             <g class="map-point" onclick="selectRegion('sumatra')" style="cursor:pointer">
               <circle cx="190" cy="185" r="14" fill="#10B981" class="transition-all hover:scale-125"/>
-              <text x="210" y="190" font-family="DM Sans" font-size="14" font-weight="800" fill="#2A1F13">Sumatra</text>
+              <text x="210" y="190" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Sumatra</text>
             </g>
             <g class="map-point" onclick="selectRegion('java')" style="cursor:pointer">
               <circle cx="480" cy="245" r="14" fill="#EF4444" class="transition-all hover:scale-125"/>
-              <text x="500" y="250" font-family="DM Sans" font-size="14" font-weight="800" fill="#2A1F13">Jawa</text>
+              <text x="500" y="250" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Jawa</text>
             </g>
             <g class="map-point" onclick="selectRegion('sulawesi')" style="cursor:pointer">
               <circle cx="505" cy="125" r="14" fill="#10B981" class="transition-all hover:scale-125"/>
-              <text x="525" y="130" font-family="DM Sans" font-size="14" font-weight="800" fill="#2A1F13">Sulawesi</text>
+              <text x="525" y="130" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Sulawesi</text>
             </g>
             <g class="map-point" onclick="selectRegion('pesisir')" style="cursor:pointer">
               <circle cx="705" cy="185" r="14" fill="#EF4444" class="transition-all hover:scale-125"/>
-              <text x="725" y="190" font-family="DM Sans" font-size="14" font-weight="800" fill="#2A1F13">Pesisir Timur</text>
+              <text x="725" y="190" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Pesisir Timur</text>
             </g>
             <g class="map-point" onclick="selectRegion('timur')" style="cursor:pointer">
               <circle cx="745" cy="300" r="14" fill="#F59E0B" class="transition-all hover:scale-125"/>
-              <text x="765" y="305" font-family="DM Sans" font-size="14" font-weight="800" fill="#2A1F13">Indo Timur</text>
+              <text x="765" y="305" font-family="Inter" font-size="14" font-weight="800" fill="#2A1F13">Indo Timur</text>
             </g>
           </svg>
         </div>
